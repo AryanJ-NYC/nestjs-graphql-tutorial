@@ -5,7 +5,9 @@ export class MessagesResolver {
   // this is just for demonstration purposes
   // do NOT do this in real-life
   // this is meant as a substitute for a databse
-  messagesThatReallyShouldBeInADb = [{ description: 'The seed message' }];
+  messagesThatReallyShouldBeInADb = [
+    { id: 0, description: 'The seed message' },
+  ];
 
   @Query()
   messages() {
@@ -14,7 +16,8 @@ export class MessagesResolver {
 
   @Mutation()
   createMessage(@Args('description') description: string) {
-    const newMessage = { description };
+    const id = this.messagesThatReallyShouldBeInADb.length;
+    const newMessage = { id, description };
     this.messagesThatReallyShouldBeInADb.push(newMessage);
     return newMessage;
   }
