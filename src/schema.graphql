@@ -1,0 +1,12 @@
+type Message {
+  id: Int!
+  description: String!
+}
+
+type Query {
+  messages: [Message]!
+}
+
+type Mutation {
+  createMessage(description: String!): Message!
+}
