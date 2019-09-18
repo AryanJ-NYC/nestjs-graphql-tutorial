@@ -10,6 +10,8 @@ import { MessagesModule } from './messages/messages.module';
         path: join(process.cwd(), '/src/graphql.schema.d.ts'),
         outputAs: 'class',
       },
+      playground: true,
+      introspection: true,
       typePaths: ['./**/*.graphql'],
       resolverValidationOptions: {
         requireResolversForResolveType: false,
