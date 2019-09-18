@@ -4,7 +4,7 @@ import { Mutation, Resolver, Query, Args } from '@nestjs/graphql';
 export class MessagesResolver {
   // this is just for demonstration purposes
   // do NOT do this in real-life
-  // this is meant as a substitute for a databse
+  // this is meant as a substitute for a database
   messagesThatReallyShouldBeInADb = [
     { id: 0, description: 'The seed message' },
   ];
