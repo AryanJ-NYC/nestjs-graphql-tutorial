@@ -1,0 +1,6 @@
+endpoint: https://us1.prisma.sh/aryan-j-e0febe/nestjs-graphql-tutorial/dev
+datamodel: datamodel.prisma
+
+generate:
+  - generator: typescript-client
+    output: ./generated/prisma-client/

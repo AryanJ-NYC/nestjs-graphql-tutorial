@@ -1,24 +1,18 @@
 import { Mutation, Resolver, Query, Args } from '@nestjs/graphql';
+import { PrismaService } from '../prisma/prisma.service';
 
 @Resolver()
 export class MessagesResolver {
-  // this is just for demonstration purposes
-  // do NOT do this in real-life
-  // this is meant as a substitute for a database
-  messagesThatReallyShouldBeInADb = [
-    { id: 0, description: 'The seed message' },
-  ];
+  // this constructor is how use injection in NestJS
+  constructor(private readonly prisma: PrismaService) {}
 
   @Query()
-  messages() {
-    return this.messagesThatReallyShouldBeInADb;
+  messages(@Args() args) {
+    return this.prisma.query.messages(args);
   }
 
   @Mutation()
-  createMessage(@Args('description') description: string) {
-    const id = this.messagesThatReallyShouldBeInADb.length;
-    const newMessage = { id, description };
-    this.messagesThatReallyShouldBeInADb.push(newMessage);
-    return newMessage;
+  createMessage(@Args() args) {
+    return this.prisma.mutation.createMessage(args);
   }
 }

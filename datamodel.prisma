@@ -1,0 +1,4 @@
+type Message {
+  id: Int! @id
+  description: String!
+}

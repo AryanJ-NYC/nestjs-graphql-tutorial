@@ -1,0 +1,11 @@
+projects:
+  nodejs-tutorial:
+    schemaPath: src/prisma/schema.graphql
+    extensions:
+      endpoints:
+        dev: https://us1.prisma.sh/aryan-j-e0febe/nestjs-graphql-tutorial/dev
+      codegen:
+        - generator: prisma-binding
+          language: typescript
+          output:
+            binding: src/prisma/prisma.binding.ts
