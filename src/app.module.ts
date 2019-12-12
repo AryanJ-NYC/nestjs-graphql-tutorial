@@ -7,7 +7,7 @@ import { MessagesModule } from './messages/messages.module';
   imports: [
     GraphQLModule.forRoot({
       definitions: {
-        path: join(process.cwd(), '/src/graphql.schema.d.ts'),
+        path: join(process.cwd(), '/src/graphql.schema.ts'),
         outputAs: 'class',
       },
       playground: true,

@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "name": "foodie-network",
+  "builds": [
+    {
+      "src": "src/main.ts",
+      "use": "@now/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "src/main.ts"
+    }
+  ]
+}

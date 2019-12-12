@@ -46,6 +46,9 @@
     "tslint": "5.16.0",
     "typescript": "3.4.3"
   },
+  "resolutions": {
+    "fast-glob": "https://files-5653q5abb.now.sh"
+  },
   "jest": {
     "moduleFileExtensions": [
       "js",
